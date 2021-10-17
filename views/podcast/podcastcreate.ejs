@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head.ejs") %>
+    </head>
+    <body data-barba="wrapper">
+        <%- include("../partials/nav-header.ejs") %>
+        <main data-barba="container" data-barba-namespace="podcastcreate">
+            <form action="/podcast" method="POST">
+                <h1>New Episode</h1>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="text" name="tabName" placeholder="Tab Name" required></input>
+                <input type="text" name="nr" placeholder="Episode number" required></input>
+                <input type="text" name="mainGuest" placeholder="Main Guest" required></input>
+                <input type="text" name="title" placeholder="Title of the Episode"  required></input>              
+                <textarea name="description" placeholder="Description" required></textarea>    
+                <input type="text" name="youtubeLink" placeholder="Youtube Embed Link" required></input>              
+                <input type="text" name="spotiLink" placeholder="Spotify Episode Link"></input>        
+                <input type="text" name="appleLink" placeholder="Apple Podcast Link"></input>        
+                <textarea name="participants" placeholder="People who partecipated in the podcast (separated by ; for different roles, separated by commas for same role"></textarea>
+                <input type="text" name="pRoles" placeholder="Roles of participants separated by ;"></input>
+                <input type="text" name="tags" placeholder="Tags separated by ;"></input>         
+                <fieldset class="upload inline-flex">
+                    <select name="img" id="image-select">
+                    <option value="" selected disabled >Choose Image to Display</option>
+                    <% files.forEach(element =>{ %> 
+                        <option value="<%= element %>"><%= element %></option>
+                    <% })    %> 
+                    </select>
+                    <button class="img-upload"><i class="lni lni-upload"></i></button>
+                </fieldset>
+                <input type="text" name="links" placeholder="Episode links separated by ;"></input>
+                <input type="text" name="linkNames" placeholder="Episode link names separated by ;"></input>
+                <input type="text" name="seoHandle" placeholder="Link extension"></input>
+                <input type="text" name="seoTitle" placeholder="Title at the top of the page"></input>
+                <button type="submit">Create</button>
+            </form>
+            <form class="upload-form">
+                <fieldset class="inline-flex">
+                <h1>Upload a file</h1><h1 class="close-upload-form"><i class="lni lni-close"></i></h1>
+                </fieldset>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="file" name="file">
+                <div class="upload-error error"></div>
+                <button type="submit">Upload</button>
+            </form>
+            <div class="obscure"></div>
+            <%- include("../partials/footer.ejs") %> 
+            <%- include("../partials/scripts.ejs") %> 
+        </main>    
+        <%- include("../partials/nav.ejs") %>
+
+        <%- include("../partials/cursor.ejs") %> 
+        <%- include("../partials/anim-slides.ejs") %> 
+          
+        
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<footer>
+    <div class="footer-text">
+        <ul>
+            <% if(user){ %> 
+                <p>Welcome <%= user.email %></p>
+                <% if(user.is_admin){ %>
+                    <div class="auth-link">            
+                        <a class="auth a-link1" href="/podcast/create">New Episode</a>
+                        <div class="nav-swipe a-swipe1"></div>
+                    </div>
+                <% } %> 
+                <div class="auth-link">
+                    <a class="auth a-link3" id="logout" href="/logout" data-barba-prevent="self">Logout</a>
+                    <div class="nav-swipe a-swipe3"></div>
+                </div>
+            <% }else{ %> 
+                <div class="auth-link">            
+                    <a class="auth a-link1" id="signup" href="/signup">Sign Up</a>
+                    <div class="nav-swipe a-swipe1"></div>
+                </div>
+                <div class="auth-link">
+                    <a class="auth a-link2" id="login" href="/login">Login</a>
+                    <div class="nav-swipe a-swipe2"></div>
+                </div>
+            <% } %>    
+            <p>For anything, contact us at innected@gmail.com </p>
+        </ul>
+    </div>
+</footer>
+
+
+

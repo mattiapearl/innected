@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("./partials/head.ejs") %>
+    </head>
+    <body data-barba="wrapper">
+        <%- include("./partials/nav-header.ejs") %>
+        
+        <main data-barba="container" data-barba-namespace="about">
+          <a class="back" href="/">&larr; Back to homepage</a>
+          <section class="presentation pres1" data-embed="matt">
+            <div class="pres-img">
+              <img loading="lazy"src="/content/about/matoverlaymin.png" alt="">
+              <img loading="lazy"src="/content/about/skybox-1min.jpg" class="skybox" alt="">
+              <div class="pres-img-swipe pt3"></div>
+            </div>           
+            <div class="pres-text">
+              <h1><span style="color:rgb(240, 147, 110);">This is </span> Mat</h1>
+              <p>If the internet wasn't there I probably would not be here doing what I do. Our world is not structured in a way that makes being different easy. People around us are not motivating nor trying to grow and living in a different environment is not a simple task. This is my reason to build Innected. I want to build a place where growing and creating is the standard and where we can all share our passion.</p>
+              <div class="embed"></div>
+              <div class="pres-text-swipe pt-2"></div>
+            </div>
+          </section>
+          <section class="presentation pres2" data-embed="drew">
+            <div class="pres-text">
+              <h1><span style="color:rgb(255, 93, 93);">This is </span>Drew</h1>
+              <p>If Innected existed a couple of years ago when I founded my company it would have made my journey as an entrepreneur much easier. Finding partners with the same mindsets and investors was always a hurdle. So I thought, why not build a digital platform to fulfill that purpose? This is why I founded Innected. A global online platform where you can learn from others, find partners, share ideas, and get advice from successful founders!</p>
+              <div class="embed"></div>
+              <div class="pres-text-swipe pt-2"></div>
+            </div>
+            <div class="pres-img">
+              <img loading="lazy"src="/content/about/drewoverlaymin.png" alt="">
+              <img loading="lazy"src="/content/about/skybox-2min.jpg" class="skybox" alt="">
+              <div class="pres-img-swipe pt3"></div>
+            </div>   
+          </section>
+          <%- include("./partials/scripts.ejs") %> 
+          <%- include("./partials/footer.ejs") %> 
+        </main>
+        <%- include("./partials/nav.ejs") %>
+        <%- include("./partials/cursor.ejs") %> 
+        <%- include("./partials/anim-slides.ejs") %> 
+    </body>
+</html>

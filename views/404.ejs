@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("./partials/head.ejs") %>
+    </head>
+    <body data-barba="wrapper">
+        <%- include("./partials/nav-header.ejs") %>
+        
+        <main data-barba="container" data-barba-namespace="404">
+          <a class="back" href="/">&larr; Back to homepage</a>
+            <section class="podcast1 detail-slide">
+              <div class="fourofour">
+                <h1>404</h1>
+                <p >
+                  Dolorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+                  velit voluptates placeat id neque aperiam mollitia consequuntur
+                  soluta quibusdam deleniti! 
+                </p>
+                <p>
+                  Did you know that "Lorem" was wrongly cut from "Dolorem"? go back <b><a style="color: rgb(255, 101, 101);" href="/">home</a></b>
+                </p>
+              </div>
+            </section>
+              <%- include("./partials/footer.ejs") %> 
+              <%- include("./partials/scripts.ejs") %> 
+        </main>
+
+        <%- include("./partials/nav.ejs") %>
+
+        <%- include("./partials/cursor.ejs") %> 
+        <%- include("./partials/anim-slides.ejs") %> 
+            
+
+    </body>
+</html>

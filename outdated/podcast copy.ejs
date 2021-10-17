@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head.ejs") %>
+    </head>
+    <body data-barba="wrapper">
+        <%- include("../partials/nav-header.ejs") %>
+        
+        <main data-barba="container" data-barba-namespace="podcast">
+          <a class="back" href="/">&larr; Back to homepage</a>
+          <% if(podcast.length>0) { %>
+            <% podcast.forEach((element) => { %>
+              <section class="podcast1 detail-slide" id="<%= element._id %>">
+                <div class="podcast-text">
+                  <h3 class="podcast-episode">EP<% if(element.nr<10){ %> 0<%= element.nr %><% }else{ %> <%= element.nr %><% } %></h3>
+                  <h1 class="podcast-title"><%= element.title  %> </h1>
+                  <p class="podcast-description">
+                    <span class="guests">Guests: <% element.guests.forEach(guest => { const pos = element.guests.indexOf(guest); const len = element.guests.length; if(pos + 1 == len){ %><%= guest %><% }else { %><%= guest +", "%><% }}); %> </span>
+                    <span class="desc">
+                        <%= element.description%> 
+                      </span>
+                    <div class="expand"><i class="lni lni-plus"></i> Expand</div>
+                  </p>
+                  <div class="embed" id="embed"><%- element.embed %></div>
+                </div>
+                <div class="podcast-img">
+                  <img loading="lazy" src="/content/podcast/<%= element.img%>" alt="innected podcast image" />
+                </div>
+              </section>
+            <% }) %>
+            <% }else{ %>
+              <h1 class="center">No Episode (Yet).</h1>
+              <% } %> 
+              <%- include("../partials/footer.ejs") %> 
+              <%- include("../partials/scripts.ejs") %> 
+        </main>
+        <div class="title-swipe" style="display: none;"></div>
+          <%- include("../partials/nav.ejs") %>
+          <%- include("../partials/cursor.ejs") %> 
+          <%- include("../partials/anim-slides.ejs") %> 
+          
+         
+    </body>
+</html>

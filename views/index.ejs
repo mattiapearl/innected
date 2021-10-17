@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+
+        <%- include("./partials/head.ejs") %> 
+
+    </head>
+    <body data-barba="wrapper">
+
+        <%- include("./partials/nav-header.ejs") %>
+
+        <main data-barba="container" data-barba-namespace="home">
+           <section class="podcast slide">
+               <div class="hero-img">
+                   <img loading="lazy" id="headphones" class="one-hundred" src="/content/headphones.png" alt="">
+                   <div class="color-bg1"></div>
+                   <div class="reveal-img"></div>
+               </div>
+               <div class="hero-desc">
+                   <div class="title">
+                       <h2>THIS IS NOT A <span class="podcast-span">MOTIVATIONAL PODCAST.</span></h2>
+                       <div class="title-swipe t-swipe1"></div>
+                   </div>
+                   <p>Innected is a podcast for entrepreneurs who want to build the future. We share stories of modern entrepreneurs who follow their dreams and connect them with you. </p>
+                   <a href="/podcast"class="explore podcast-explore">Explore</a>
+                   <div class="reveal-text"></div>
+               </div>
+           </section>
+           <section class="discord slide">
+               <div class="hero-img">
+                   <img loading="lazy" src="/content/discord-flat.png" class="discord-pic one-hundred" alt="">
+                   <div id="photo-bg1"></div>
+                   <div class="reveal-img"></div>
+               </div>
+               <div class="hero-desc">
+                   <div class="title">
+                       <h2>THIS IS NOT  <span class="discord-span">JUST A COMMUNITY</span></h2>
+                       <div class="title-swipe t-swipe2"></div>
+                   </div>
+                   <p>This is a place for people like us. Because we are not alone. Because we can make the impossible together, we just miss a place to engineer it. Join now</p>
+                   <a href="https://discord.gg/3hG6VAZa6t" target="_blank" class="explore discord-explore">Discord</a>
+                   <div class="reveal-text"></div>
+               </div>
+           </section>
+           <section class="instagram slide">
+               <div class="hero-img">
+                   <!-- <img class="one-hundred" src="" alt=""> -->
+                   <div class="wop" style="color: rgb(255,139, 93);"><span style="color: white;">DREW and </span>MAT</div>
+                   <div class="reveal-img"></div>
+               </div>
+               <div class="hero-desc">
+                   <div class="title">
+                       <h2>ABOUT <span class="instagram-span">US</span></h2>
+                       <div class="title-swipe t-swipe3"></div>
+                   </div>
+                   <p>We are not entrepreneurs for the work we do, but for the way we see things. We want to better ourselves and make the world a better place. We also know that there we are not alone in the weird way we live. Hear about why we started Innected and more</p>
+                   <a href="/about" class="explore instagram-explore" >Read More</a>
+                   <div class="reveal-text"></div>
+               </div>
+           </section>
+           <%- include("./partials/footer.ejs") %> 
+           <%- include("./partials/scripts.ejs") %> 
+        </main>
+        <%- include("./partials/nav.ejs") %>
+        <%- include("./partials/cursor.ejs") %> 
+        <%- include("./partials/anim-slides.ejs") %> 
+    </body>
+</html>

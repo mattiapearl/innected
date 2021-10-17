@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head.ejs") %>
+    </head>
+    <body data-barba ="wrapper">
+        <%- include("../partials/nav-header.ejs") %>
+        <main data-barba="container" data-barba-namespace="login">
+            <form class="log-in">
+                <h1>Login</h1>
+                <div class="login-error error"></div>               
+                <input type="email" placeholder="Email" name="email" required></input>
+                <input type="password" placeholder="Password" name="password" required></input>            
+                <button type="submit">Login</button>
+            </form>
+            <%- include("../partials/footer.ejs") %> 
+        </main>
+        <%- include("../partials/nav.ejs") %>
+
+        <%- include("../partials/cursor.ejs") %> 
+        <%- include("../partials/anim-slides.ejs") %> 
+          
+        
+    </body>
+</html>

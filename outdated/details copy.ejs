@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head.ejs") %>
+    </head>
+    <body data-barba="wrapper">
+        <%- include("../partials/nav-header.ejs") %>
+       <main data-barba="container" data-barba-namespace="details">
+        <a class="back" href="/podcast">&larr; Back to episodes</a>
+        <section class="podcast1 detail-slide" id="<%= podcast._id %>">
+          <div class="podcast-text">
+            <h3 class="podcast-episode">EP<% if(podcast.nr<10){ %> 0<%= podcast.nr %><% }else{ %> <%= podcast.nr %><% } %></h3>
+            <h1 class="podcast-title"><%= podcast.title  %> </h1>
+            <p class="podcast-description">
+              <span class="guests">Guests: <% podcast.guests.forEach(guest => { const pos = podcast.guests.indexOf(guest); const len = podcast.guests.length; if(pos + 1 == len){ %><%= guest %><% }else { %><%= guest +", "%><% }}); %> </span>
+              <span><%= podcast.description %></span>
+            </p>
+            <div class="embed" id="embed"><%- podcast.embed %></div>
+          </div>
+          <div class="podcast-img">
+            <img src="/content/podcast/<%= podcast.img%>" alt="innected podcast image" />
+          </div>
+        </section>
+          <%- include("../partials/footer.ejs") %> 
+          <%- include("../partials/scripts.ejs") %> 
+       </main>
+
+       <%- include("../partials/nav.ejs") %>
+
+       <%- include("../partials/cursor.ejs") %> 
+       <%- include("../partials/anim-slides.ejs") %> 
+         
+       
+    </body>
+</html>
